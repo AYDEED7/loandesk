@@ -1,0 +1,5 @@
+{
+  "request_file": "data/requests.json",
+  "holdings_file": "data/holdings.json",
+  "report_file": "reports/report.txt"
+}
