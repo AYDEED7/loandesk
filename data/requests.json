@@ -1,0 +1,63 @@
+[
+  {
+    "name": "Poetry Hour",
+    "books": {
+      "The Little Prince": 1
+    }
+  },
+  {
+    "name": "Freshers Tour",
+    "books": {
+      "Dune": 2
+    }
+  },
+  {
+    "name": "Monday Seminar",
+    "books": {
+      "Hamlet": 3,
+      "Brave New World": 1
+    }
+  },
+  {
+    "name": "Film Club",
+    "books": {
+      "Brave New World": 1,
+      "Dune": 1
+    }
+  },
+  {
+    "name": "Essay Group",
+    "books": {
+      "Frankenstein": 1,
+      "Hamlet": 2
+    }
+  },
+  {
+    "name": "Classics Circle",
+    "books": {
+      "Pride and Prejudice": 4,
+      "The Hobbit": 1
+    }
+  },
+  {
+    "name": "Night Readers",
+    "books": {
+      "Dracula": 2,
+      "Animal Farm": 1
+    }
+  },
+  {
+    "name": "Junior Storytime",
+    "books": {
+      "The Hobbit": 3,
+      "The Little Prince": 5
+    }
+  },
+  {
+    "name": "Science Fiction Lab",
+    "books": {
+      "Dune": 1,
+      "1984": 6
+    }
+  }
+]
