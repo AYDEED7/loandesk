@@ -3,12 +3,12 @@ import json
 def main():
     
     with open("config.json", "r", encoding="utf-8") as file:
-        config = json.load(file);
+        config = json.load(file)
     
     print("LoanDesk configuration loaded.");4
     
     with open(config["request_file"], "r", encoding="utf-8") as file:
-        requests = json.load(file);
+        requests = json.load(file)
         
     print("\nReading-list requests:")
     
@@ -16,8 +16,22 @@ def main():
         print(f"{number}. {request['name']}")
     
     
+    with open(config["holdings_file"],"r",encoding="utf-8") as file:
+        holdings = json.load(file)
     
-    
+    print("\nLibrary book holdings:")
+
+    for title, holding in holdings.items():
+        copies = holding["copies"]
+        borrowed = holding["borrowed"]
+        on_shelf = copies - borrowed
+
+        print(
+            f"{title}: "
+            f"Owned: {copies}, "
+            f"Borrowed: {borrowed}, "
+            f"On shelf: {on_shelf}"
+        )
     
     
     
