@@ -1,5 +1,5 @@
 import json
-
+from request import Request
 def main():
     
     with open("config.json", "r", encoding="utf-8") as file:
@@ -8,12 +8,18 @@ def main():
     print("LoanDesk configuration loaded.");4
     
     with open(config["request_file"], "r", encoding="utf-8") as file:
-        requests = json.load(file)
+        request_data = json.load(file)
+        
+    requests = []
+
+    for item in request_data:
+        request = Request(item["name"], item["books"])
+        requests.append(request)
         
     print("\nReading-list requests:")
     
     for number, request in enumerate(requests, start=1):
-        print(f"{number}. {request['name']}")
+        print(f"{number}. {request.name}")
     
     
     with open(config["holdings_file"],"r",encoding="utf-8") as file:
