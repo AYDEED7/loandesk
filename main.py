@@ -1,6 +1,7 @@
 import json
 from request import Request
 from holdings import Holdings
+from manager import LoanDeskManager
 def main():
     
     with open("config.json", "r", encoding="utf-8") as file:
@@ -17,16 +18,17 @@ def main():
         request = Request(item["name"], item["books"])
         requests.append(request)
         
-    print("\nReading-list requests:")
     
-    for number, request in enumerate(requests, start=1):
-        print(f"{number}. {request.name}")
     
     
     with open(config["holdings_file"],"r",encoding="utf-8") as file:
         holdings_data = json.load(file)
         
     holdings = Holdings(holdings_data)
+    
+    manager = LoanDeskManager(requests,holdings)
+    
+    manager.list_requests()
     
     print("\nLibrary book holdings:")
     
