@@ -16,3 +16,17 @@ class Holdings:
         borrowed = holding["borrowed"]
 
         return copies - borrowed
+
+    
+    def borrow(self, title, quantity):
+        """Increase the borrowed quantity of a book."""
+
+        available = self.get_on_shelf(title)
+
+        if quantity <= 0:
+            raise ValueError("Quantity must be a positive integer.")
+
+        if available < quantity:
+            raise ValueError(f"Not enough copies of '{title}' available.")
+
+        self.books[title]["borrowed"] += quantity

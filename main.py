@@ -30,6 +30,19 @@ def main():
     
     manager.list_requests()
     
+    manager.plan()
+
+    manager.gap("Monday Seminar")
+
+    manager.lend("Monday Seminar")
+
+    manager.lend("Poetry Hour")
+
+    print(
+    "\nThe Little Prince borrowed:",
+    holdings.books["The Little Prince"]["borrowed"]
+    )
+    
     print("\nLibrary book holdings:")
     
     
