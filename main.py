@@ -1,5 +1,6 @@
 import json
 from request import Request
+from holdings import Holdings
 def main():
     
     with open("config.json", "r", encoding="utf-8") as file:
@@ -23,14 +24,18 @@ def main():
     
     
     with open(config["holdings_file"],"r",encoding="utf-8") as file:
-        holdings = json.load(file)
+        holdings_data = json.load(file)
+        
+    holdings = Holdings(holdings_data)
     
     print("\nLibrary book holdings:")
+    
+    
 
-    for title, holding in holdings.items():
+    for title, holding in holdings.books.items():
         copies = holding["copies"]
         borrowed = holding["borrowed"]
-        on_shelf = copies - borrowed
+        on_shelf = holdings.get_on_shelf(title)
 
         print(
             f"{title}: "
